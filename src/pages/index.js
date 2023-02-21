@@ -6,8 +6,6 @@ export default function Home({results}) {
   const API_URL_POSTER = "https://image.tmdb.org/t/p/w500"
   const API_URL_BANNER = "https://image.tmdb.org/t/p/original"
 
-  console.log(data);
-
   // const stylesHome = {
   //   width: "100vw",
   //   backgroundImage: `url(${API_URL_BANNER}${data[0].backdrop_path})`,
@@ -22,18 +20,17 @@ export default function Home({results}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Estamos en Home</h1>
 
-      <main>
+      <section className='containerCards'>
+        <h2>Popular movies</h2>
         {data.map(movie =>{
           return(
             <article className='card' key={movie.id}>
-              {/* <h2>{movie.title}</h2> */}
               <img src={`${API_URL_POSTER}${movie.poster_path}`} alt=''></img>
             </article>
           )
         })}
-      </main>
+      </section>
     </>
   )
 }

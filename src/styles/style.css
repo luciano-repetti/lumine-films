@@ -4,17 +4,61 @@
     box-sizing: border-box;
 }
 
-header{
+.containerApp{
     display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: space-around;
+}
+
+.navegation{
+    display: flex;
+    width: 25%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    gap: 1.5em;
+}
+
+.navegation .line{
+    width: 75%;
+    height: 1px;
+    background-color: #000;
+    
+}
+
+.navegation .navLater{
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.navegation .navLater a{
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+
+    display: flex;
     align-items: center;
 }
 
-header nav{
-    display: flex;
-    gap: 1rem;
+.navegation .navLater a:hover{
+    transform: scale(1.1);
+}
+
+.navegation .navLater a.logOut{
+    position: absolute;
+    bottom: 50px;
+}
+
+.navegation .sectionNav{
+    align-items: center;
+}
+
+.navegation .navLater a{
+    width: fit-content;
 }
 
 main{
@@ -28,13 +72,31 @@ main{
     gap: 2em;
 }
 
-main .card{
-    flex-basis: 200px;
+.containerCards{
+    width: 100%;
+    background-color: #0d253f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 2em;
+}
+
+.containerCards h2{
+    width: 100%;
+    text-align: center;
+}
+
+.containerCards .card{
+    flex-basis: 150px;
     flex-grow: 1;
     flex-shrink: 2;
     position: relative;
     transition: .5s;
     border-radius: 1em;
+    overflow: hidden;
 }
 
 .card img{
@@ -47,45 +109,4 @@ main .card{
 
 .card:hover{
     flex-grow: 2;
-    -webkit-animation: flip-vertical-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: flip-vertical-bck 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
-@-webkit-keyframes flip-vertical-bck {
-    0% {
-      -webkit-transform: translateZ(0) rotateY(0);
-              transform: translateZ(0) rotateY(0);
-    }
-    100% {
-      -webkit-transform: translateZ(-260px) rotateY(-180deg);
-              transform: translateZ(-260px) rotateY(-180deg);
-    }
-}
-
-@keyframes flip-vertical-bck {
-0% {
-    -webkit-transform: translateZ(0) rotateY(0);
-            transform: translateZ(0) rotateY(0);
-}
-100% {
-    -webkit-transform: translateZ(-260px) rotateY(-180deg);
-            transform: translateZ(-260px) rotateY(-180deg);
-}
-}
-
-.card:hover > h2{
-    opacity: 0;
-}
-
-.card h2{
-    width: 80%;
-    text-align: center;
-    position: absolute;
-    z-index: 1;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    transition: .5s;
 }
