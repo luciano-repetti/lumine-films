@@ -110,3 +110,27 @@ main{
 .card:hover{
     flex-grow: 2;
 }
+
+
+.pagination{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 5em;
+}
+
+.pagination button{
+    padding: .5em 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.pagination button.active{
+    background-color: #000;
+    color: #fff;
+}
+
+.pagination p{
+    font-size: 1.8em;
+}
