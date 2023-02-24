@@ -28,7 +28,6 @@ export default function Home({results}) {
     }
   
     fetchData()
-    console.log(movies)
     window.scroll({
       top: 0,
       behavior: 'smooth'
